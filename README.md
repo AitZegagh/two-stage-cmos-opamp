@@ -3,7 +3,7 @@
 This project is a simple two-stage CMOS op-amp built and simulated in LTspice.
 The goal was to build the amplifier at transistor level, bias it correctly, and extract the main DC, AC, and transient specifications.
 
-> **Note:** this version is **not Miller compensated**. The results below are for the final uncompensated version.
+> **Note:** this version is not Miller compensated. The results below are for the final uncompensated version.
 
 ## Circuit overview
 
@@ -140,14 +140,8 @@ The 10–90% / 90–10% measurements are shown below:
 
 ## Comments
 
-A few things stand out from the results:
+- The op-amp reaches the target of more than 60 dB gain.
+- The large-signal response is fast, with rise/fall rates around 20–23 V/µs.
+- The power consumption is relatively high for a small op-amp because the design uses a 1 mA ideal tail current source and simple Level-1 models.
+- This project is mainly a learning / transistor-level design exercise.
 
-- The op-amp reaches the target of **more than 60 dB gain**.
-- The large-signal response is fast, with rise/fall rates around **20–23 V/µs**.
-- The power consumption is relatively high for a small op-amp because the design uses a **1 mA ideal tail current source** and simple Level-1 models.
-- This project is mainly a **learning / transistor-level design exercise**, not a final silicon-ready design.
-
-## Files
-
-This repository includes the README and screenshots used as evidence for the measured results.
-The final LTspice schematic (`.asc`) can be added in the project root.

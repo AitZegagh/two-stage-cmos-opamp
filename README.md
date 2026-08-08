@@ -95,6 +95,8 @@ Then I tested it using a pulse, or square-wave, input to see how quickly the out
 
 ![Large-signal transient](screenshots/large_signal_response.png)
 
+To test the pulse response, I read on the internet that it is better to measure the rise and fall times from 10% to 90% of the output swing rather than from 0% to 100%. This is because the exact 0% and 100% points can be difficult to define in a real circuit due to noise and other disturbances.
+
 From this test, I measured:
 
 ![Rise/fall measurements](screenshots/rise_fall_measurements.png)

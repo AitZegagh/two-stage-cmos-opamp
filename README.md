@@ -49,7 +49,7 @@ Then I added the second stage using a common-source NMOS and a PMOS active load.
 
 The common-source NMOS is used to add another voltage gain after the first stage, while the PMOS works as its active load. It seemed to me the best way to increase the gain without it being too complicated.
 
-![Final schematic](final-schematic.png)
+![Final schematic](screenshots/final-schematic.png)
 
 After adding the second stage, I first checked the operating point to make sure everything was working correctly.
 the main valures are : 

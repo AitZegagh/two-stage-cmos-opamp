@@ -106,8 +106,9 @@ Fall rate=20.05 V/µs
 
 The rise and fall measurements are also consistent with the output voltage swing.
 
-For the rising edge:22.94 V/µs × 0.108 µs ≈ 2.48 V
-For the falling edge:  20.05 V/µs × 0.124 µs ≈ 2.49 V
+For the rising edge:22.94 V/µs × 0.108 µs ≈ 2.48V
+
+For the falling edge:  20.05 V/µs × 0.124 µs ≈ 2.49V
 
 ## What I learned
 

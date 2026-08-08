@@ -122,7 +122,7 @@ For the falling edge:  20.05 V/µs × 0.124 µs ≈ 2.49V
 
 ## What I learned
 
-This project taught me a lot and also taught me how to really visualize a transistor-level circuit. Instead of only seeing each transistor separately and learning what it does on its own, I got to see how the different parts interact with each other and how a complete amplifier can slowly be built from a few simpler transistor circuits.
+This project taught me a lot and also taught me how to really visualize a transistor level circuit. Instead of only seeing each transistor separately and learning what it does on its own, I got to see how the different parts interact with each other and how a complete amplifier can slowly be built from a few simpler transistor circuits.
 Starting with just one NMOS, then adding the differential pair, the current mirror, and finally the second stage also made it much easier for me to understand why each part is there and what it actually does.
 
 I also got more comfortable using LTspice for transistor characterization, operating-point analysis, DC sweeps, transfer-function analysis, AC analysis, and transient tests.

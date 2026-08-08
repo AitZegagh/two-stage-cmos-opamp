@@ -79,19 +79,23 @@ The low-frequency gain starts at around 62.6 dB, which matches the .tf result.
 
 The approximate -3 dB bandwidth is 300 kHz.
 
-then i proceeded with some tests with various inputs
+then i proceeded with some tests with various signals, the inputs Vin+ and Vin- are always 2 volts
 
 ## Small signal sine wave test
 
 I tested the amplifier using a small sine wave around the DC bias point.
 The goal here was simply to check that the amplifier behaved correctly in its linear region and that the output followed the input signal while amplifying it.
+Sine wave : DC offset = 2V, Amplitude = 0.3 mV, Frequency = 10 kHz
 
 ![Small signal](screenshots/small_signal_transient.png)
 
-It works fine.
+The output oscillated approximately between 3.37 V and 4.17 V, which corresponds to an amplitude of about 0.40 V.
+So the measured gain is Av=0.40V/0.0003V = 1333 V/V
+Which checks out with our previous gain calculation.
 
 ## Pulse / square-wave large signal test
-Then I tested it using a pulse, or square-wave, input to see how quickly the output could react to a sudden change.
+Then I tested it using a pulse, or square-wave, input to see how quickly the output could react to a sudden change and to calculate the slew rates.
+the pulse function used is PULSE(1.99 2.01 0 1n 1n 5u 10u).
 
 ![Large-signal transient](screenshots/large_signal_response.png)
 
@@ -100,6 +104,8 @@ To test the pulse response, I read on the internet that it is better to measure 
 From this test, I measured:
 
 ![Rise/fall measurements](screenshots/rise_fall_measurements.png)
+
+slew rates :
 
 10–90% rise time=108 ns
 90–10% fall time=124 ns

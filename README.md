@@ -5,7 +5,58 @@ a PMOS current mirror, a common-source NMOS second stage, and a PMOS active load
 
 This project was an introduction to transistor level design, which really caught my attention. It was very interesting to see how different transistors interacted with each other to amplify a signal.
 
+Before starting the project, i defined my own NMOS and PMOS models, to see more precisely how transistor level design works, that would allow me to choose my own transistor's dimension and see with my eyes how different parameters affect the circuit.
+
 During the research I did to complete this project, a much recommended step was to do Miller compensation using a Miller capacitor, which I unfortunately failed to do. For some reason, it wasn't working, it just kept decreasing my bandwidth without improving the phase margin, so I gave up on it. It was still a successful project which worked using various input tests, as shown below.
+
+## MOSFET models and transistor sizing
+
+I  defined simple NMOS and PMOS models directly in LTspice:
+
+.model MYPMOS PMOS (LEVEL=1 VTO=-0.7 KP=100u LAMBDA=0.02)
+
+.model MYNMOS NMOS (LEVEL=1 VTO=0.7 KP=200u LAMBDA=0.02)
+
+The main parameters used are:
+
+- `VTO`: threshold voltage ($V_{TH}$)
+- `KP` :   the transconductance parameter of a MOSFET
+- `LAMBDA`: channel-length modulation parameter ($\lambda$)
+
+These values allow the calculation of the width to length ratio to define the transistor's dimensions using the drain current formula :
+
+$$
+I_D = \frac{1}{2}K_P\frac{W}{L}(V_{GS}-V_{TH})^2
+$$
+
+For example : Differential input pair
+
+The differential pair M1 and M2 shares a tail current of:
+
+$$
+I_{\text{tail}} = 1\text{mA}
+$$
+
+When both inputs are equal, the current is divided equally between the two transistors:
+
+$$
+I_{D1} = I_{D2} = \frac{I_{\text{tail}}}{2}
+$$
+
+The overdrive voltage being :
+
+$$
+V_{OV} = V_{GS} - V_{TH}
+$$
+
+The required $W/L$ ratio can be calculated using the NMOS $K_P$ value :
+
+$$
+\boxed{\frac{W}{L} = \frac{2I_D}{K_P V_{OV}^2}}
+$$
+
+This same logic is applied to the rest of the transistors.
+
 
 ## Starting with the NMOS
 I first started with only one NMOS transistor and characterized it using DC sweeps.
